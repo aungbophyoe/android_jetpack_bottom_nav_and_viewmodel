@@ -6,13 +6,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import com.aungbophyoe.space.words.databinding.FragmentSettingPageBinding
 
 class SettingPageFragment : Fragment() {
     private var _binding : FragmentSettingPageBinding? = null
     private val binding get() = _binding!!
-    private val viewModel : MainViewModel by viewModels()
+    private val viewModel : MainViewModel by activityViewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {

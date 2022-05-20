@@ -5,14 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
+import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
 import com.aungbophyoe.space.words.databinding.FragmentDataChangeBinding
 
 class DataChange : Fragment() {
     private var _binding : FragmentDataChangeBinding? = null
     private val binding get() = _binding!!
-    private val viewModel : MainViewModel by viewModels()
-    private var key : Int = 0
+    private val viewModel : MainViewModel by activityViewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -25,36 +25,20 @@ class DataChange : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        _binding = FragmentDataChangeBinding.inflate(inflater,container,false)
+        _binding = DataBindingUtil.inflate(inflater,R.layout.fragment_data_change,container,false)
         val view = _binding!!.root
         return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.apply {
-            btnAdd.setOnClickListener {
-                key++
-                viewModel.setKey(key)
-            }
-
-            btnMinus.setOnClickListener {
-                key--
-                viewModel.setKey(key)
-            }
-
-            viewModel.key.observe(viewLifecycleOwner){
-                key = it
-                tvKey.text = "$key"
-            }
+            data = viewModel
+            lifecycleOwner = viewLifecycleOwner
         }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-    }
-
-    companion object {
-
     }
 }

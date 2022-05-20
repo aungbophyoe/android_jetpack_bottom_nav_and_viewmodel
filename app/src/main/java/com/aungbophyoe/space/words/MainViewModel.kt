@@ -15,4 +15,18 @@ class MainViewModel : ViewModel() {
          _key.value = v
         }
     }
+
+    fun add(_v:Int){
+        viewModelScope.launch {
+            val v = _v + 1
+            _key.value = v
+        }
+    }
+
+    fun minus(_v:Int){
+        viewModelScope.launch {
+            val v = _v - 1
+            _key.value = v
+        }
+    }
 }
