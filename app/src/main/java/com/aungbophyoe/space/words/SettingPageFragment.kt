@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import com.aungbophyoe.space.words.databinding.FragmentSettingPageBinding
@@ -25,17 +26,14 @@ class SettingPageFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentSettingPageBinding.inflate(layoutInflater,container,false)
+        _binding = DataBindingUtil.inflate(inflater,R.layout.fragment_setting_page,container,false)
         return _binding!!.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.apply {
-            viewModel.key.observe(viewLifecycleOwner){
-                val key = it
-                tvSetting.text = "Value : $key"
-                Log.d("SettingPage","$key")
-            }
+            viewModelData = viewModel
+            lifecycleOwner = viewLifecycleOwner
         }
     }
 
