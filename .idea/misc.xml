@@ -3,7 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/abbp1/StudioProjects/words/app/src/main/res/layout/activity_main.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/abbp1/StudioProjects/words/app/src/main/res/drawable/bottom_nav_background.xml" value="0.107" />
+        <entry key="..\:/Users/abbp1/StudioProjects/words/app/src/main/res/layout/activity_main.xml" value="0.18" />
         <entry key="..\:/Users/abbp1/StudioProjects/words/app/src/main/res/layout/fragment_data_change.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/abbp1/StudioProjects/words/app/src/main/res/layout/fragment_home_page.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/abbp1/StudioProjects/words/app/src/main/res/layout/fragment_letter_list.xml" value="0.22447916666666667" />
