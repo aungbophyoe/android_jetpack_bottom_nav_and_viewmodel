@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         _binding = ActivityMainBinding.inflate(layoutInflater)
         val view = _binding!!.root
+        // important
         setContentView(view)
         binding.apply {
             val navHostFragment = supportFragmentManager
